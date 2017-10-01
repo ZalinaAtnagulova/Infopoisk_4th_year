@@ -69,7 +69,7 @@ def article_data(article, link):
     for i, h in enumerate(soup.findAll('div', {'style':'float:left;margin:5px 20px 10px 0;width:300px;'})):
         for a in h.next_siblings:
             if len(a) > 1:
-                text += str(a) + '\n'
+                text += str(a).strip(' ') + '\n'
     return author+title+date+topic+url+text
     
 url = 'http://briansk.ru/'
